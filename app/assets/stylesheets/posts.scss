@@ -95,3 +95,17 @@
     font-size: 24px;
     opacity: 0.5;
 }
+
+/* likes ==================================== */
+.posts-show-item .fa-heart {
+    font-size: 16px;
+    margin-right: 3px;
+}
+
+.posts-show-item .liked-btn {
+    color: #8899a6;
+}
+
+.posts-show-item .unliked-btn {
+    color: #ff2581;
+}
