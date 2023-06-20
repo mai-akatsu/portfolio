@@ -110,6 +110,26 @@
     color: #afb6bf;
 }
 
+.user-post-content {
+    text-decoration: none;
+    color: #2d3133;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-top: 3px;
+}
+
+.users-posts-index-item {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    display: flex;
+}
+
+.users-post-left {
+    width: 20%;
+}
+
 /* users/new, users/edit ================================ */
 .users-form input {
     margin-bottom: 15px;

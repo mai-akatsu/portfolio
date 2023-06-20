@@ -2,23 +2,24 @@
   <div class="container">
     <h1 class="posts-heading">今日のやることリスト</h1>
     <h3 class="posts-nextheading">達成したらチェックしてね</h3>
-    <% @posts.each do |post| %>
+    <% @todays_post.each do |post| %>
       <div class="posts-index-item">
         <div class="post-right">
-        <% if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
-          <%= button_to("/likes/#{post.id}/destroy",{method: "post"}) do %>
-          <span class="fa-regular fa-square-check unliked-btn"></span>
-        <% end %>
-        <% else %>
-          <%= button_to("/likes/#{post.id}/create",{method: "post"}) do %>
-          <span class="fa-regular fa-square liked-btn"></span>
-        <% end %>
-        <% end %>
-        <div class="post-content">
-          <%= link_to(post.content, "/posts/#{post.id}") %>
-        </div>
+          <% if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
+            <%= button_to("/likes/#{post.id}/destroy",{method: "post"}) do %>
+            <span class="fa-regular fa-square-check unliked-btn"></span>
+          <% end %>
+          <% else %>
+            <%= button_to("/likes/#{post.id}/create",{method: "post"})  do %>
+            <span id="onclick" class="fa-regular fa-square liked-btn"></span>
+          <% end %>
+          <% end %>
+          <div class="post-content">
+            <%= link_to(post.content, "/posts/#{post.id}") %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+

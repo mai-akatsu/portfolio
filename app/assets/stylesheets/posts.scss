@@ -44,6 +44,7 @@ button {
     width: 90%;
     text-align: left;
     display: flex;
+    align-items: center;
 }
 
 .post-content {
@@ -122,10 +123,22 @@ button {
     margin-right: 3px;
 }
 
-.posts-show-item .liked-btn {
+.liked-btn {
     color: #8899a6;
 }
 
-.posts-show-item .unliked-btn {
-    color: #ff2581;
+.unliked-btn {
+    color: #02ff4e;
+}
+
+/* jquery ==================================== */
+.post-img {
+    position: relative;
+    width: 30%;
+    top: 15%;
+    left: 30%;
+}
+
+img {
+    width: 10%;
 }
