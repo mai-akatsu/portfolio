@@ -135,7 +135,7 @@
     margin-bottom: 15px;
 }
 
-/* users/likes ================================ */
+/* users/show ================================ */
 .user-sum {
     background-color: white;
     overflow: hidden;
@@ -162,4 +162,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* users/likes ================================ */
+
+.posts-likes-item {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-likes-right {
+    width: 10%;
 }

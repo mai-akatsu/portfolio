@@ -3,13 +3,9 @@ class UsersController < ApplicationController
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
   
-  def index
-    @users = User.all
-  end
-  
-  def show
+  def likes
     @user = User.find(params[:id])
-    likes = Like.where(user_id: @user.id ,post_id: @user.posts.id)
+    likes= Like.where(user_id: @user.id).pluck(:post_id)
     @like_posts = Post.find(likes)
 
   end
@@ -79,7 +75,7 @@ class UsersController < ApplicationController
     redirect_to("/login")
   end
 
-  def likes
+  def show
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
     @likes_count = @likes.count
