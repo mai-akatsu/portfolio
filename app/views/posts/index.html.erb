@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="posts-heading">今日のやることリスト</h1>
     <h3 class="posts-nextheading">達成したらチェックしてね</h3>
-    <% @todays_post.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-right">
           <% if Like.find_by(user_id: @current_user.id, post_id: post.id)%>

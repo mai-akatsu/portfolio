@@ -8,9 +8,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find_by(id: params[:id])
-    @likes = Like.where(user_id: @user.id)
-    @likes_by_day = @likes.group(:created_at).order("created_at DESC")
+    @user = User.find(params[:id])
+    binding.pry
+    likes = Like.where(user_id: @user.id ,post_id: @user.posts.id)
+    @like_posts = Post.find(likes)
+
   end
   
   def new

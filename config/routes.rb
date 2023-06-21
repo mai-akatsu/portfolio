@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post "users/create" => "users#create"
   get "signup" => "users#new"
   get "users/index" => "users#index"
-  get "users/:id" => "users#show"
+  get "users/:id/likes" => "users#show"
   post "login" => "users#login"
   post "logout" => "users#logout"
   get "login" => "users#login_form"
