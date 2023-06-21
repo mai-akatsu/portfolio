@@ -134,3 +134,32 @@
 .users-form input {
     margin-bottom: 15px;
 }
+
+/* users/likes ================================ */
+.user-sum {
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-sum-left {
+    padding: 5px 30px;
+    color: #57575f;
+}
+
+.user-sum-right {
+    padding: 5px 30px;
+    color: #57575f;
+}
+
+.user-level {
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

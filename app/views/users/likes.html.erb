@@ -8,14 +8,19 @@
         <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
-    
     <ul class="user-tabs">
-      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+      <li><%= link_to("達成したTODO", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("あなたの褒め日記", "/users/#{@user.id}/likes") %></li>
     </ul>
-    <%= @likes_count%>
     <%= line_chart @likes.group_by_day(:created_at, format: "%m/%d").count,
-    title: "あなたの褒め日記"%>
-
+    title: "褒め記録"%>
+    <ul class="user-sum">
+      <li class="user-sum-left">褒めた回数 <%= @likes_count%> 回</li>
+      <li class="user-sum-right"><%= Date.today%></li>
+    </ul>
+    <ul class="user-level">
+      <li class="user-sum-left"><span class="fa-regular fa-square-check unliked-btn"></span>褒めレベル  <%= @level%></li>
+      <li class="user-sum-right">次のレベルまであと  <%= @next_level%>  TODO達成</li>
+    </ul>
   </div>
 </div>

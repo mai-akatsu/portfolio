@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    binding.pry
     likes = Like.where(user_id: @user.id ,post_id: @user.posts.id)
     @like_posts = Post.find(likes)
 
@@ -84,6 +83,8 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
     @likes_count = @likes.count
+    @level = @likes_count / 5
+    @next_level = 5 - (@likes_count % 5 )
   end
 
   def ensure_correct_user
