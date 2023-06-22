@@ -10,8 +10,10 @@
             <span class="fa-regular fa-square-check unliked-btn"></span>
           <% end %>
           <% else %>
-            <%= button_to("/likes/#{post.id}/create",{method: "post"})  do %>
-            <span id="onclick" class="fa-regular fa-square liked-btn"></span>
+            <div class="onclick">
+              <%= button_to("/likes/#{post.id}/create",{method: "post"})  do %>
+              <span class="fa-regular fa-square liked-btn"></span>
+            </div>
           <% end %>
           <% end %>
           <div class="post-content">
@@ -20,6 +22,9 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="active-img">
+    <img class="active-img" src="https://2.bp.blogspot.com/-wF18WHHpoq8/VvKZG5K3n8I/AAAAAAAA5FA/kd1dB25wV9MzCyhf0vRteNJXAZezhVgng/s800/pose_motsu_blank.pngス">
   </div>
 </div>
 

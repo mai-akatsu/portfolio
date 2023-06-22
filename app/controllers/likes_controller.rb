@@ -5,6 +5,7 @@ class LikesController < ApplicationController
             post_id: params[:post_id]
         )
         @like.save
+        flash[:good] = "いいね😆！"
         redirect_to("/posts/index")
     end
 

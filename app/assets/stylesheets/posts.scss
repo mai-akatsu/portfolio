@@ -133,13 +133,8 @@ button {
 }
 
 /* jquery ==================================== */
-.post-img {
+.active-img {
+    display: none;
     position: relative;
-    width: 30%;
-    top: 15%;
-    left: 30%;
-}
-
-img {
-    width: 10%;
+    padding: 0;
 }

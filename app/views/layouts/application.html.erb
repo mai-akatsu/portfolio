@@ -16,23 +16,31 @@
       <div class="header-logo">
         <%= link_to("app","/")%>
       </div>
+      <button type="button" class="hum-button btn js-btn">
+        <span class="btn-line"></span>
+      </button>
       <ul class="header-menus">
         <% current_user = User.find_by(id: session[:user_id]) %>
         <% if current_user %>
-          <li><%= link_to(current_user.name, "/users/#{current_user.id}/likes") %></li>
-          <li><%= link_to("投稿一覧", "/posts/index") %></li>
-          <li><%= link_to("新規投稿", "/posts/new") %></li>
-          <li><%= link_to("ログアウト", "/logout", data: { "turbo-method": :post }) %></li>
+          <li class="menu-list"><%= link_to(current_user.name, "/users/#{current_user.id}/likes") %></li>
+          <li class="menu-list"><%= link_to("投稿一覧", "/posts/index") %></li>
+          <li class="menu-list"><%= link_to("新規投稿", "/posts/new") %></li>
+          <li class="menu-list"><%= link_to("ログアウト", "/logout", data: { "turbo-method": :post }) %></li>
         <% else %>
-          <li><%= link_to("appについて", "/about") %></li>
-          <li><%= link_to("新規登録", "/signup") %></li>
-          <li><%= link_to("ログイン", "/login") %></li>
+          <li class="menu-list"><%= link_to("appについて", "/about") %></li>
+          <li class="menu-list"><%= link_to("新規登録", "/signup") %></li>
+          <li class="menu-list"><%= link_to("ログイン", "/login") %></li>
         <% end %>
       </ul>
     </header>
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice]%>
+      </div>
+    <% end %>
+    <% if flash[:good] %>
+      <div class="good">
+        <%= flash[:good]%>
       </div>
     <% end %>
     <%= yield %>

@@ -6,6 +6,8 @@ import jquery from "jquery"
 window.$ = jquery
 import "chartkick"
 
-$("#onclick").click(function () {
-    alert("いいね😆！");
-})
+$(function () {
+    $('.js-btn').on('click', function () {        // js-btnクラスをクリックすると、
+        $('.header-menus , .btn-line').toggleClass('open'); // メニューとバーガーの線にopenクラスをつけ外しする
+    })
+});
