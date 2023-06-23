@@ -75,6 +75,15 @@ class UsersController < ApplicationController
     redirect_to("/login")
   end
 
+  def guest_login
+    user = User.find_or_create_by(email: "guest@example.com")
+    user.name = "ゲスト"
+    user.password = SecureRandom.urlsafe_base64
+    session[:user_id] = user.id
+    flash[:notice] = "ゲストユーザーとしてログインしました"
+    redirect_to("/posts/index")
+  end
+
   def show
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
