@@ -14,7 +14,7 @@
   <body>
     <header>
       <div class="header-logo">
-        <%= link_to("app","/")%>
+        <%= link_to("ほめほめ","/")%>
       </div>
       <button type="button" class="hum-button btn js-btn">
         <span class="btn-line"></span>
@@ -23,11 +23,10 @@
         <% current_user = User.find_by(id: session[:user_id]) %>
         <% if current_user %>
           <li class="menu-list"><%= link_to(current_user.name, "/users/#{current_user.id}/likes") %></li>
-          <li class="menu-list"><%= link_to("投稿一覧", "/posts/index") %></li>
+          <li class="menu-list"><%= link_to("やること一覧", "/posts/index") %></li>
           <li class="menu-list"><%= link_to("新規投稿", "/posts/new") %></li>
           <li class="menu-list"><%= link_to("ログアウト", "/logout", data: { "turbo-method": :post }) %></li>
         <% else %>
-          <li class="menu-list"><%= link_to("appについて", "/about") %></li>
           <li class="menu-list"><%= link_to("新規登録", "/signup") %></li>
           <li class="menu-list"><%= link_to("ログイン", "/login") %></li>
         <% end %>

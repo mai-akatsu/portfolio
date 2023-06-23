@@ -22,5 +22,4 @@ Rails.application.routes.draw do
   post "likes/:post_id/destroy" => "likes#destroy"
   
   get "/" => "home#top"
-  get "about" => "home#about"
 end
