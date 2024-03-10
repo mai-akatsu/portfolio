@@ -1,6 +1,26 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :users do
+    member do
+      get :likes
+    end
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "signup" => "users#new"
+  post "login" => "users#login"
+  post "logout" => "users#logout"
+  get "login" => "users#login_form"
+  get "guest_login" => "users#guest_login"
+
+  get "posts/index" => "posts#index"
+  get "posts/new" => "posts#new"
+  get "posts/:id" => "posts#show"
+  post "posts/create" => "posts#create"
+  get "posts/:id/edit" => "posts#edit"
+  post "posts/:id/update" => "posts#update"
+  delete "posts/:id" => "posts#destroy"
+
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
+  
+  get "/" => "home#top"
 end
